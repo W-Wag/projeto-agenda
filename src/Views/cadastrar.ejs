@@ -1,0 +1,46 @@
+<%- include('./includes/head.ejs') %>
+
+<%- include ('./includes/nav.ejs') %>
+
+<div class="container-fluid my-5">
+  <div class="col-lg-8 px-0 m-auto">
+        <h1 class="text-center fw-semibold">Criar Conta</h1>
+        <p class="text-center mb-5 ">crie sua conta abaixo ou <br> se já possuir uma conta <a class="links hover-effect" href="/login">Clique aqui!</a></p>
+
+        <%- include('includes/messages') %>
+
+        <div class="col-lg-8 px-0 errors mb-5"></div>
+
+        <form class="row row-cols-lg-auto g-3 align-items-center d-block form-cadastro" action="/login/register" method="POST">
+          <input type="hidden" name="_csrf" value=<%= csrfToken %> 
+            >
+            <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">email</label>
+            <div class="input-group">
+            <input type="email" class="form-control" name="email" id="inlineFormInputGroupUsername" placeholder="Email">
+            </div>
+            </div>
+      
+            <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Password</label>
+            <input type="password" class="form-control"
+            name="password"
+            placeholder="Senha">
+            </div>
+
+            <div class="col-12">
+              <label class="visually-hidden" for="inlineFormSelectPref">Password Repeat</label>
+              <input type="password" class="form-control"
+              name="passwordConfirm"
+              placeholder="Repetir Senha">
+              </div>
+      
+        
+            <div class="col-12">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </form>
+  </div>
+</div>
+
+<%- include ('./includes/footer.ejs') %>

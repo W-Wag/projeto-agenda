@@ -1,0 +1,16 @@
+<%- include('./includes/head.ejs') %>
+
+<%- include ('./includes/nav.ejs') %>
+
+<div class="container-fluid my-5">
+  <div class="col-lg-8 px-0 m-auto">
+        <h1 class="text-center fw-semibold"><%= user.email %> você já esta Logado</h1>
+        <p class="text-center"> Saia de sua conta ou <a class="links hover-effect text-center" href="/">Clique aqui para voltar para Home!</a> </p>
+        
+
+        <%- include('includes/messages') %>
+
+  </div>
+</div>
+
+<%- include ('./includes/footer.ejs') %>
